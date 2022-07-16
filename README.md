@@ -14,10 +14,12 @@ This project contains a Docker image meant to facilitate the deployment of [Sent
 ## Quick Start
 
 ```shell
-docker run --name sentinel -p 8080:8080 -d sharework.cn/sentinel:1.8.4
+docker run --name sentinel -p 8080:8080 -d sharework.cn/sentinel:latest
 ```
-
+## Login
+Use the account and password of `"sentinel"`.
 ## Common property configuration
+### Environment Variables
 
 | name                          | description                            | option                                 |
 | ----------------------------- | -------------------------------------- | -------------------------------------- |
@@ -26,3 +28,7 @@ docker run --name sentinel -p 8080:8080 -d sharework.cn/sentinel:1.8.4
 | JVM_XMN      |  -Xmn           | default :512m                          |
 | TOMCAT_ACCESSLOG_ENABLED      |  server.tomcat.accesslog.enabled         | default :false                          |
 
+### Custom Properties
+Mount a configuration file(`custom.properties`) to the `/home/sentinel/conf`
+## Logs
+Please refer to the directory `/home/sentinel/logs`
